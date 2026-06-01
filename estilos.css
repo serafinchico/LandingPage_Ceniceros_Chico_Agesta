@@ -1,0 +1,958 @@
+@font-face {
+  font-family: "Bulgary Rose";
+  src: url("fonts/bulgary-rose.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gloomy Things";
+  src: url("fonts/gloomy-things.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial;
+  background: #000033;
+  color: white;
+  overflow-x: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  z-index: 2;
+}
+
+.header,
+.hero,
+.intro,
+.info,
+.estrella,
+.artistas,
+.deportes,
+.info-extra,
+.horarios,
+.formulario,
+.footer {
+  grid-column: 1 / 4;
+}
+
+/* HERO */
+
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.15) 0%,
+      rgba(0,0,0,0.35) 55%,
+      #000033 100%
+    ),
+    url("img/hero.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 6%; 
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-personas {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  height: 85vh; 
+  z-index: 2;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,1) 45%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.8) 65%, rgba(0,0,0,1) 85%);
+}
+
+.hero-logos-top {
+  position: absolute;
+  right: 6%;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  z-index: 5;
+}
+
+.hero-logos-top img {
+  height: 160px; 
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+.hero-contenido {
+  max-width: 950px; /* Le di un poco más de margen de ancho para el texto más grande */
+  margin-left: 2%;
+  position: relative;
+  z-index: 3;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 100px; /* De 80px lo subí a 105px para que sea imponente */
+  line-height: 1; /* Interlineado compacto para que no ocupe demasiado alto */
+  letter-spacing: 2px;
+  margin-bottom: 25px; 
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero h2 span {
+  color: #B7FF00;
+  font-style: italic;
+  display: block;
+}
+
+.hero p {
+  font-size: 20px; /* Un poco más grande también el texto descriptivo */
+  line-height: 1.4;
+  letter-spacing: 5px;
+  opacity: 0.9;
+  max-width: 750px;
+}
+
+.intro p {
+  letter-spacing: 8px;
+  opacity: 0.9;
+}
+
+/* BOTONES */
+
+button {
+  background: #FF6B00;
+  color: white;
+  border: none;
+  padding: 24px 46px;
+  border-radius: 40px;
+  font-weight: 800;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 35px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.boton-img {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 30px; 
+  transition: 0.3s;
+}
+
+.boton-img:hover {
+  transform: scale(1.05);
+}
+
+/* Botón del Hero más grande */
+.hero-contenido .boton-img img {
+  width: 500px; /* De 380px saltó a 480px */
+  display: block;
+}
+
+/* Botón del final de la página */
+.boton-img img {
+  width: 00px;
+  display: block;
+}
+/* INTRO */
+.intro {
+  text-align: center;
+  padding: 60px 30px 30px;
+}
+
+.intro h2 {
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* INFO */
+.info {
+  padding: 30px 20px;
+}
+
+.info-desktop {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.info-mobile {
+  display: none;
+}
+
+.info-box {
+  display: flex;
+  justify-content: center;
+}
+
+.info-box img {
+  width: 250px;
+}
+
+/* TITULOS */
+h2 {
+  color: #B7FF00;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 49px;
+  font-weight: 800;
+}
+
+.subtitulo {
+  font-size: 30px;
+  margin-bottom: 40px;
+  letter-spacing: 2.1px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+/* SECCIONES */
+.estrella,
+.artistas,
+.deportes,
+.info-extra,
+.horarios {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+/* ESTRELLAS */
+.contenedor-img {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box img {
+  border-radius: 18px;
+  display: block;
+}
+
+.estrella .img-box img {
+  height: 700px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ARTISTAS */
+.artistas {
+  overflow: hidden;
+}
+
+.artistas-grid {
+  width: 100%;
+  max-width: 1100px;
+  margin: 70px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.artista-box {
+  position: relative;
+}
+
+.artista-box img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.artista-1 { width: 80%; margin-top: 140px; }
+.artista-2 { width: 78%; margin-left: 40px; }
+.artista-3 { width: 80%; margin-top: -80px; margin-left: 440px; margin-right: 0px; }
+
+/* DEPORTES */
+.deportes-img {
+  display: flex;
+  gap: 60px;
+  overflow-x: auto;
+  padding: 20px 120px;
+  align-items: center;
+  scrollbar-width: none !important; 
+  -ms-overflow-style: none !important; 
+  cursor: grab;
+}
+
+.deportes-img::-webkit-scrollbar {
+  display: none !important; 
+}
+
+.deportes-img:active { cursor: grabbing; }
+
+.deporte-box {
+  flex: 0 0 auto;
+  min-width: 280px;
+  height: auto;
+  margin-right: 8px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.deporte-box img {
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* HORARIOS */
+.horarios-carrusel {
+  padding: 90px 40px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.horarios-carrusel h2 {
+  color: #B7FF00;
+  font-size: 44px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  gap: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #B7FF00 rgba(255,255,255,0.1);
+}
+
+.carousel::-webkit-scrollbar { height: 8px; }
+.carousel::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 10px; }
+.carousel::-webkit-scrollbar-thumb { background: #B7FF00; border-radius: 10px; }
+
+.card {
+  min-width: 180px;
+  max-width: 180px;
+  height: 280px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =====================================
+   INFO EXTRA Y CTA (UNIFICADOS)
+===================================== */
+.info-extra {
+  padding: 80px 40px 0; /* Le sacamos el padding de abajo para que la tarjeta pueda asomar */
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Evita que la tarjeta gigante genere una barra de desplazamiento horizontal */
+}
+
+.contenedor-final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1350px; /* Contenedor mucho más ancho */
+  width: 100%;
+  gap: 20px;
+}
+
+.bloque-izquierdo {
+  flex: 1.3; /* Le damos más espacio al texto que a la imagen */
+  max-width: 510px; /* ¡Acá está la clave! Ensanchamos la caja para que el título no se corte */
+  text-align: left;
+  z-index: 2;
+}
+
+.bloque-izquierdo p {
+  flex: 10;
+  width: 900%;
+  max-width: 700px !important;
+  text-align: left;
+  z-index: 210;
+  
+  /* EL TRUCO PARA SUBIRLO */
+  margin-top: -150px; /* ← Número negativo = se va para arriba. Si querés que suba más, probá con -80px o -100px. Si subió mucho, bajalo a -30px */
+}
+
+.bloque-izquierdo h2.section-title {
+  font-size: 60px;
+  line-height: 1.7; /* ← CORREGIDO EL PUNTO EN LUGAR DE COMA */
+  margin-bottom:220px;
+  text-align: left;
+  width: 2500%;
+  max-width: 250% !important; /* Evita que el título se corte antes de llegar al borde de la caja */
+}
+
+.pregunta-cta {
+  font-size: 23px;
+  color: white; 
+  margin-bottom: 40px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.bloque-izquierdo .boton-img {
+  margin-top: 0;
+  display: inline-block;
+}
+
+.bloque-izquierdo .boton-img img {
+  width: 450px; 
+}
+
+.bloque-derecho {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hacemos la tarjeta gigante y la ubicamos en la esquina */
+.tarjeta-img-nueva {
+  width: 800px; /* Tamaño gigante como en la imagen 1 */
+  max-width: none; /* Forzamos a que no se achique */
+  transform: rotate(0deg) translate(60px, 150px); /* La rotamos y la empujamos hacia abajo y a la derecha */
+  filter: drop-shadow(-10px 20px 40px rgba(0,0,0,0.6));
+  pointer-events: none;
+}
+
+/* ===== FORMULARIO ===== */
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 30, 0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.oculto { display: none !important; }
+
+.form-box {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  min-height: 760px;
+  border-radius: 0px;
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.72)), url("img/registro.png");
+  background-size: cover;
+  background-position: center;
+  padding: 44px 24px 40px;
+  color: white;
+}
+
+.cerrar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-titulo {
+  font-size: 56px;
+  line-height: 0.95;
+  margin-bottom: 26px;
+  color: #B7FF00;
+  text-transform: uppercase;
+}
+
+.vip-italic { color: #B7FF00; font-style: italic; }
+
+.form-descripcion {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 34px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.campo-grupo { margin-bottom: 18px; }
+.campo-grupo label { display: block; margin-bottom: 8px; font-size: 13px; }
+.campo-grupo input { width: 100%; padding: 7px; border: none; border-radius: 10px; background: rgba(255,255,255,0.92); font-size: 14px; }
+
+.checkbox-grupo { margin-bottom: 16px; }
+.checkbox-label { display: flex; align-items: center; gap: 12px; font-size: 13px; cursor: pointer; }
+.checkbox-label input { display: none; }
+.checkbox-custom { width: 18px; height: 18px; border-radius: 4px; border: 2px solid rgba(255,255,255,0.6); flex-shrink: 0; }
+.checkbox-label input:checked + .checkbox-custom { background: #B7FF00; border-color: #B7FF00; }
+
+.btn-enviar {
+  width: 100%;
+  background: #FF6B00;
+  border: none;
+  padding: 16px;
+  border-radius: 40px;
+  color: white;
+  font-size: 38px;
+  font-weight: 900;
+  cursor: pointer;
+  margin-top: 34px;
+}
+
+.form-confirmacion {
+  text-align: center;
+  min-height: 760px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url("img/registro.png");
+  background-size: cover;
+  background-position: center;
+  margin: -44px -24px -40px;
+  padding: 44px 24px 40px;
+}
+
+.gracias-nombre { font-size: 18px; }
+.ya-participando { color: white; font-size: 34px; }
+.participando-verde { color: #B7FF00; }
+.nos-vemos { margin-top: 16px; }
+
+
+/* FOOTER */
+.footer {
+  background: #000001;
+  padding: 35px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 60px;
+}
+.footer-info { justify-self: start; }
+.footer-info p { margin: 8px 0; font-size: 13px; opacity: 0.8; letter-spacing: 1px; color: white; text-align: left; }
+.footer-marcas { display: flex; align-items: center; gap: 40px; justify-self: center; }
+.footer-marcas img { height: 34px; width: auto; object-fit: contain; }
+.footer-redes { display: flex; align-items: center; gap: 22px; justify-self: end; }
+.footer-redes img { height: 24px; }
+
+/* ===== PUNTITOS VERDES DE FONDO ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background-image: radial-gradient(#B7FF00 1.5px, transparent 1.5px);
+  background-size: 38px 38px;
+  opacity: 0.45;
+}
+
+/* ===========================
+   RESPONSIVE MOBILE — 600px
+=========================== */
+@media (max-width: 600px) {
+
+  html, body { overflow-x: hidden; width: 100%; }
+
+ 
+  /* ===== HERO MÓVIL ===== */
+  .hero { 
+    height: 100vh; 
+    min-height: 100vh; 
+    padding: 20px 20px 0; 
+    display: block; 
+    overflow: hidden; 
+  }
+  
+  .hero-logos-top { 
+    position: absolute; 
+    top: 115px; 
+    right: 10px; 
+    left: auto; 
+    gap: 12px; 
+    z-index: 5; 
+  }
+  
+  .hero-logos-top img { 
+    height: 45px; 
+  }
+  
+  /* Centramos a los chicos abajo */
+  .hero-personas { 
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    bottom: 0; 
+    height: 50vh; 
+    width: auto; 
+    max-width: 95%; 
+    z-index: 2; 
+  }
+  
+  /* El contenido de texto se adapta al ancho de pantalla */
+  .hero-contenido { 
+    margin-left: 0px; 
+    margin-top: 90px; 
+    max-width: 100%; 
+    position: relative; 
+    z-index: 0; 
+    padding-right: 10; 
+    text-align: left; 
+  }
+  
+  .hero h2 { 
+    font-size: 40px; 
+    line-height: 1.15; 
+    margin-bottom: 12px; 
+  }
+  
+  .hero p { 
+    font-size: 14px; 
+    letter-spacing: 1px; 
+    max-width: 100%; 
+    margin-bottom: 25px; 
+    line-height: 1.5; 
+  }
+  
+  /* Botón del Hero adaptado */
+  .hero-contenido .boton-img { 
+    margin-top: 0; 
+    display: block; 
+  }
+  
+  .hero-contenido .boton-img img { 
+    width: 200%; 
+    max-width: 330px; 
+  }
+
+  /* Botón general para el resto de páginas sueltas */
+  .boton-img { 
+    margin-top: 20px; 
+  }
+  
+  .boton-img img { 
+    width: 180px; 
+  }
+
+  /* ===== INTRO Y SECCIONES INTERMEDIAS ===== */
+  .intro { padding: 40px 16px 20px; text-align: center; }
+  .intro h2 { font-size: 28px; line-height: 1.1; letter-spacing: 2px; margin-bottom: 12px; }
+  .intro p { font-size: 11px; letter-spacing: 1.5px; }
+
+  /* ===== SECCIÓN INFO (Iconos) ===== */
+  .info-desktop {
+    display: none !important; 
+  }
+
+  .info-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important; 
+    width: 100% !important;
+  }
+
+  .info { 
+    padding: 20px 10px 40px !important; 
+    display: block !important;
+  }
+  
+  .info-box {
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* ========================================================
+     PANEL DE CONTROL INDIVIDUAL PARA CADA IMAGEN (MOBILE)
+     ======================================================== */
+
+  /* 1. UBICACIÓN (ubi2.png) */
+  .info-mobile .info-box:nth-child(1) img {
+    width: 100% !important;
+    display: block !important;
+    max-width: 200px !important; /* 1. TAMAÑO: Achicá o agrandá este número para esta imagen sola. */
+    margin-bottom: 30px !important; /* 2. ESPACIO ABAJO: Controla cuánto aire hay entre esta y la que sigue. */
+    margin-top: 0px !important; /* 3. MOVER ARRIBA/ABAJO: Positivos la bajan, negativos la suben. */
+    transform: translateX(20px) !important; /* 4. MOVER IZQUIERDA/DERECHA: Positivos a la derecha, negativos a la izq. */
+  }
+
+  /* 2. HORARIO (hora1.png) */
+  .info-mobile .info-box:nth-child(2) img {
+    width: 100% !important;
+    display: block !important;
+    max-width: 160px !important; 
+    margin-bottom: 30px !important; 
+    margin-top: 0px !important;
+    transform: translateX(0px) !important; 
+  }
+
+  /* 3. SUNSET (sun3.png) */
+  .info-mobile .info-box:nth-child(3) img {
+    width: 100% !important;
+    display: block !important;
+    max-width: 100px !important; 
+    margin-bottom: 30px !important; 
+    margin-top: 0px !important;
+    transform: translateX(10px) !important; 
+  }
+
+  /* 4. SORTEO (sor4.png) */
+  .info-mobile .info-box:nth-child(4) img {
+    width: 100% !important;
+    display: block !important;
+    max-width: 150px !important; 
+    margin-bottom: 0px !important; /* Al último no le ponemos aire abajo */
+    margin-top: 0px !important;
+    transform: translateX(20px) !important; 
+  }
+
+  /* ========================================================
+     PANEL DE CONTROL: TÍTULOS DE SECCIONES (MOBILE)
+     ======================================================== */
+
+  /* 1. ALINEACIÓN GENERAL DE LAS 3 SECCIONES */
+  .estrella, .artistas, .deportes { 
+    padding: 50px 20px 30px !important; 
+    
+    /* ALINEACIÓN: Poné 'center' si los querés en el medio, o dejá 'left' para la izquierda */
+    text-align: center !important; 
+  }
+
+  /* 2. LOS TÍTULOS VERDES (Ej: ENTRENÁ CON ESTRELLAS) */
+  .estrella h2.section-title, 
+  .artistas h2.section-title, 
+  .deportes h2.section-title { 
+    font-size: 22px !important; /* TAMAÑO DE LETRA: Subilo a 38px si lo querés más grande */
+    line-height: 1.1 !important; /* Espacio entre renglones si el título ocupa dos líneas */
+    letter-spacing: 1px !important; 
+    margin-top: 0 !important;
+    margin-bottom: 12px !important; /* ESPACIO: Separación entre el título verde y el subtítulo blanco */
+  }
+
+  /* 3. LOS SUBTÍTULOS BLANCOS (Ej: Clínicas con jugadores...) */
+  .estrella .subtitulo, 
+  .artistas .subtitulo, 
+  .deportes .subtitulo { 
+    font-size: 14px !important; /* TAMAÑO DE LETRA: Si 11px era muy chico, acá lo subimos a 14px */
+    letter-spacing: 1px !important; 
+    line-height: 1.5 !important;
+    margin-top: 0 !important;
+    margin-bottom: 25px !important; /* ESPACIO: Separación entre el subtítulo y las fotos que le siguen abajo */
+    opacity: 0.9 !important;
+  }
+
+  /* (Acomodamos el carrusel de horarios que estaba pegado a los títulos viejos) */
+  .horarios-carrusel { padding: 40px 16px; text-align: left; }
+  .estrella .img-box img { width: 100%; height: auto; max-height: 420px; object-fit: cover; }
+
+  /* ===== CONTROL MANUAL DE ARTISTAS (MOBILE) ===== */
+.artistas-grid {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 450px !important; /* AJUSTÁ ESTA ALTURA TOTAL: Si cortan las fotos, subí este número */
+  padding: 0 !important;
+}
+
+/* Base para todas las cajas */
+.artista-box {
+  position: absolute !important;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.artista-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* 1. ARTISTA GRANDE (Izquierda) */
+.artista-1 {
+  top: -160px; 
+  left: 0px;
+  width: 50% !important; /* ANCHO: Cambialo para agrandar/achicar */
+  height: 260px !important; /* ALTURA: Cambialo para agrandar/achicar */
+}
+
+/* 2. ARTISTA SUPERIOR (Derecha) */
+.artista-2 {
+  top: -50px; 
+  right: 0px;
+  width: 47% !important;
+  height: 250px !important;
+}
+
+/* 3. ARTISTA INFERIOR (Derecha) */
+.artista-3 {
+  bottom: 0px; /* DISTANCIA: Subilo o bajalo para alejarlo/acercarlo al de arriba */
+  right: -10px;
+  width: 60% !important;
+  height: 210px !important;
+}
+  /* ===== DEPORTES (CARRUSEL SIN BARRA) ===== */
+  .deportes-img {
+    display: flex; gap: 14px; overflow-x: auto; padding: 16px 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; align-items: center;
+    scrollbar-width: none !important; -ms-overflow-style: none !important;
+  }
+  .deportes-img::-webkit-scrollbar { display: none !important; }
+  .deporte-box { flex: 0 0 auto; min-width: 80vw; max-width: 80vw; scroll-snap-align: center; margin: 0; }
+  .deporte-box img { width: 100%; height: auto; max-height: 380px; object-fit: contain; }
+
+  /* ===== HORARIOS ===== */
+  .horarios-carrusel { padding: 40px 16px; }
+  .horarios-carrusel h2 { font-size: 28px; text-align: center; }
+  .carousel { gap: 10px; padding: 12px 0; max-width: 100%; }
+  .card { min-width: 120px; max-width: 120px; height: 190px; }
+
+  /* ===== MÓVIL: INFO EXTRA Y CTA UNIFICADOS ===== */
+  .info-extra { 
+    padding: 50px 20px 40px !important; 
+    position: relative; 
+    overflow: hidden; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .contenedor-final { 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 20px; 
+    width: 100%;
+  }
+  
+  .bloque-izquierdo { 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: left; 
+    z-index: 2; 
+    position: relative;
+    width: 100%;
+    margin-top: 0 !important; 
+  }
+  
+  .bloque-izquierdo h2.section-title { 
+    font-size: 36px !important; 
+    line-height: 1.1 !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+    width: 110% !important;
+    box-sizing: border-box !important;
+    padding-right: 23px !important;
+  }
+  
+  .bloque-izquierdo p { 
+    font-size: 13px !important; 
+    line-height: 1.8 !important; /* ← CORREGIDO EL PUNTO EN LUGAR DE COMA */
+    margin-top: 0 !important;
+    margin-bottom: 20px !important; 
+    text-align: center !important;
+    width: 105% !important;
+    box-sizing: border-box !important;
+    padding-right: 23px !important; /* Panel de control para cortar el texto */
+  }
+  
+  .pregunta-cta { 
+    font-size: 14px !important; 
+    margin-top: 0 !important;
+    margin-bottom: 19px !important;
+    text-align: center !important;
+  }
+  
+  .bloque-izquierdo .boton-img {
+    margin-top: 0 !important;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .bloque-izquierdo .boton-img img { 
+    width: 100% !important; 
+    max-width: 320px !important; 
+  }
+
+  /* LA TARJETA DE FONDO RESPONSIVE */
+  .bloque-derecho { 
+    position: absolute; 
+    bottom: -20px; 
+    right: -20px; 
+    z-index: 0; 
+  }
+  
+  .tarjeta-img-nueva { 
+    width: 500px !important; 
+    opacity: 0.3 !important; 
+    transform: rotate(10deg) !important; 
+  }
+
+  /* ===== FOOTER MÓVIL ===== */
+  .footer { 
+    grid-template-columns: 1fr auto; 
+    gap: 10px; 
+    padding: 24px 16px; 
+    text-align: left; 
+    align-items: end;
+  }
+  
+  .footer-info { justify-self: start; }
+  .footer-info p { font-size: 10px; line-height: 1.4; margin: 4px 0; }
+  
+  .footer-marcas { 
+    display: none; 
+  }
+  
+  .footer-redes { 
+    justify-self: end; 
+    gap: 16px;
+  }
+  .footer-redes img { height: 20px; }
+
+  /* ===== FORMULARIO POP-UP MOBILE ===== */
+  .form-overlay { padding: 24px; box-sizing: border-box; }
+  .form-box { width: 100%; max-width: 100%; min-height: auto; height: auto; border-radius: 16px; overflow: visible; padding: 15px; background: none; box-sizing: border-box; }
+  .form-box > div { border-radius: 16px; overflow: hidden; padding: 40px 20px 32px; background: linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.75)), url("img/registro.png"); background-size: cover; background-position: center; box-sizing: border-box; width: 100%; }
+  .form-titulo { font-size: 28px; line-height: 1.05; margin-bottom: 12px; }
+  .form-descripcion { font-size: 13px; margin-bottom: 16px; }
+  .btn-enviar { font-size: 20px; padding: 14px; margin-top: 16px; }
+  .form-confirmacion { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: auto; margin: 0 !important; background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.65)), url("img/registro.png") !important; background-size: cover !important; background-position: center !important; }
+  .ya-participando { font-size: 22px; }
+  .gracias-nombre { font-size: 15px; }
+  .nos-vemos { font-size: 13px; }
+}
